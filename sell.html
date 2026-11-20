@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your Product – ReSell</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">♻</span>
+        <span class="logo-text">Re<span>Sell</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="buy.html">Buy</a>
+        <a href="sell.html" class="active">Sell</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== PAGE HEADER ==================== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Sell Your Product</h1>
+      <p>Fill out the details below. Your product will be added to the Buy page right away!</p>
+    </div>
+  </section>
+
+  <!-- ==================== SELL FORM SECTION ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="form-wrapper fade-in">
+        <!-- Message box for Validation Errors or Success Notification -->
+        <div id="formMessage" class="form-message hidden"></div>
+
+        <form id="sellForm" novalidate>
+          <!-- Row 1: Seller Name & Contact Number -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sellerName">Seller Name *</label>
+              <input
+                type="text"
+                id="sellerName"
+                placeholder="e.g., Rahul Sharma"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="contactNumber">Contact Number (WhatsApp) *</label>
+              <input
+                type="tel"
+                id="contactNumber"
+                placeholder="10-digit mobile number (e.g., 9876543210)"
+                maxlength="10"
+                required
+              >
+            </div>
+          </div>
+
+          <!-- Row 2: Product Name & Category -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productName">Product Name *</label>
+              <input
+                type="text"
+                id="productName"
+                placeholder="e.g., Dell Inspiron Laptop"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="productCategory">Product Category *</label>
+              <select id="productCategory" required>
+                <option value="">-- Select Category --</option>
+                <option value="Mobiles">Mobiles</option>
+                <option value="Laptops">Laptops</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Books">Books</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Bicycles">Bicycles</option>
+                <option value="Sports">Sports</option>
+                <option value="Watches">Watches</option>
+                <option value="Musical Instruments">Musical Instruments</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Price & Condition -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productPrice">Product Price (in ₹) *</label>
+              <input
+                type="number"
+                id="productPrice"
+                placeholder="e.g., 15000"
+                min="1"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="productCondition">Product Condition *</label>
+              <select id="productCondition" required>
+                <option value="">-- Select Condition --</option>
+                <option value="Like New">Like New</option>
+                <option value="Good">Good</option>
+                <option value="Used">Used</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Product Description -->
+          <div class="form-group">
+            <label for="productDescription">Product Description *</label>
+            <textarea
+              id="productDescription"
+              rows="4"
+              placeholder="Write key details like age of the product, accessories included, and any scratches..."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Product Image Upload + Live Preview -->
+          <div class="form-group">
+            <label for="productImage">Product Image Upload (Optional, max 2MB)</label>
+            <input type="file" id="productImage" accept="image/*">
+            <small class="help-text">
+              If you don't upload a photo, a clean default image will be used automatically.
+            </small>
+
+            <div id="imagePreviewBox" class="image-preview-box hidden">
+              <img id="imagePreview" src="" alt="Selected product preview">
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-full">Post Product for Sale</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MY POSTED PRODUCTS (MANAGE / DELETE) ==================== -->
+  <section class="section section-light" id="myListingsSection">
+    <div class="container">
+      <div class="section-header">
+        <h2>My Posted Products</h2>
+        <p>Products you submitted on this browser are listed here. You can delete them anytime.</p>
+      </div>
+
+      <div class="products-grid" id="myListingsGrid"></div>
+
+      <div class="empty-state hidden" id="noListingsMessage">
+        <h3>You haven't posted any products yet</h3>
+        <p>Fill out the form above to list your first item. It will appear here and on the Buy page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo footer-logo">
+          <span class="logo-icon">♻</span>
+          <span class="logo-text">Re<span>Sell</span></span>
+        </a>
+        <p class="footer-tagline">Give Your Old Things a New Life.</p>
+        <p class="footer-desc">
+          A simple, trusted second-hand marketplace built as a B.Tech CSE 1st Semester web development project.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="buy.html">Buy Products</a></li>
+          <li><a href="sell.html">Sell Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Details</h4>
+        <ul class="contact-list">
+          <li>Email: support@resell-campus.in</li>
+          <li>Phone: +91 98765 43210</li>
+          <li>Location: CSE Department, Engineering College Campus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 ReSell &ndash; Second-Hand Buying &amp; Selling Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

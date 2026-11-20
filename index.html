@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReSell – Buy and Sell Second-Hand Products</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo">
+        <span class="logo-icon">♻</span>
+        <span class="logo-text">Re<span>Sell</span></span>
+      </a>
+
+      <!-- Search Bar in Navbar (Redirects to Buy Page with Search Query) -->
+      <form class="nav-search" id="navSearchForm">
+        <input
+          type="text"
+          id="navSearchInput"
+          placeholder="Search phones, laptops, books..."
+          aria-label="Search products"
+        >
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="buy.html">Buy</a>
+        <a href="sell.html">Sell</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content fade-in">
+        <span class="tagline-badge">Give Your Old Things a New Life.</span>
+        <h1>Buy Better. <span>Sell Smarter.</span></h1>
+        <p class="hero-subtitle">
+          Discover quality second-hand mobiles, laptops, books, and more at student-friendly prices — or list your unused items in minutes with zero commission.
+        </p>
+        <div class="hero-buttons">
+          <a href="buy.html" class="btn btn-primary">Explore Products</a>
+          <a href="sell.html" class="btn btn-outline">Sell Your Product</a>
+        </div>
+      </div>
+
+      <!-- Hero Highlights Card -->
+      <div class="hero-card fade-in">
+        <h3>Why Students Love ReSell</h3>
+        <div class="hero-feature-list">
+          <div class="hero-feature">
+            <span class="feature-dot">✓</span>
+            <div>
+              <strong>Pocket-Friendly Prices</strong>
+              <p>Save up to 60% compared to buying brand new.</p>
+            </div>
+          </div>
+          <div class="hero-feature">
+            <span class="feature-dot">✓</span>
+            <div>
+              <strong>Direct WhatsApp Chat</strong>
+              <p>Talk directly to the seller with no middlemen.</p>
+            </div>
+          </div>
+          <div class="hero-feature">
+            <span class="feature-dot">✓</span>
+            <div>
+              <strong>Eco-Friendly Choice</strong>
+              <p>Reduce electronic waste by reusing great products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT CATEGORIES ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Choose a category to browse pre-owned items near you.</p>
+      </div>
+
+      <div class="categories-grid">
+        <a href="buy.html?category=Mobiles" class="category-card">
+          <div class="category-icon">📱</div>
+          <h3>Mobiles</h3>
+          <span>Smartphones &amp; Accessories</span>
+        </a>
+
+        <a href="buy.html?category=Laptops" class="category-card">
+          <div class="category-icon">💻</div>
+          <h3>Laptops</h3>
+          <span>Work &amp; Study Machines</span>
+        </a>
+
+        <a href="buy.html?category=Electronics" class="category-card">
+          <div class="category-icon">🎧</div>
+          <h3>Electronics</h3>
+          <span>Headphones &amp; Gadgets</span>
+        </a>
+
+        <a href="buy.html?category=Books" class="category-card">
+          <div class="category-icon">📚</div>
+          <h3>Books</h3>
+          <span>Engineering &amp; Study Guides</span>
+        </a>
+
+        <a href="buy.html?category=Furniture" class="category-card">
+          <div class="category-icon">🪑</div>
+          <h3>Furniture</h3>
+          <span>Tables, Chairs &amp; Desks</span>
+        </a>
+
+        <a href="buy.html?category=Bicycles" class="category-card">
+          <div class="category-icon">🚲</div>
+          <h3>Bicycles</h3>
+          <span>Campus &amp; City Cycles</span>
+        </a>
+
+        <a href="buy.html?category=Sports" class="category-card">
+          <div class="category-icon">🏏</div>
+          <h3>Sports</h3>
+          <span>Cricket, Gym &amp; Gear</span>
+        </a>
+
+        <a href="buy.html?category=Watches" class="category-card">
+          <div class="category-icon">⌚</div>
+          <h3>Watches</h3>
+          <span>Smart &amp; Analog Watches</span>
+        </a>
+
+        <a href="buy.html?category=Musical Instruments" class="category-card">
+          <div class="category-icon">🎸</div>
+          <h3>Musical Instruments</h3>
+          <span>Guitars &amp; Keyboards</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PRODUCTS ==================== -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header section-header-row">
+        <div>
+          <h2>Featured Products</h2>
+          <p>Handpicked second-hand deals ready for a new owner.</p>
+        </div>
+        <a href="buy.html" class="view-all-link">View All Products &rarr;</a>
+      </div>
+
+      <!-- Featured product cards are loaded dynamically by js/script.js -->
+      <div class="products-grid" id="featuredProductsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How ReSell Works</h2>
+        <p>Buying or selling pre-owned products takes only 3 easy steps.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Browse or List</h3>
+          <p>Explore listed items on the Buy page, or fill out the simple Sell form to post your product in seconds.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Check Product Details</h3>
+          <p>Review the price, product condition, description, and photos before making a decision.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Connect via WhatsApp</h3>
+          <p>Click "Contact Seller" to message the seller directly on WhatsApp, inspect the item, and complete the deal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION BANNER ==================== -->
+  <section class="cta-section">
+    <div class="container cta-box">
+      <div>
+        <h2>Have an old phone, laptop, or book sitting idle?</h2>
+        <p>Turn your unused items into instant cash and help someone save money.</p>
+      </div>
+      <a href="sell.html" class="btn btn-white">Start Selling Now</a>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT DETAILS MODAL ==================== -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close details">&times;</button>
+      <div class="modal-body" id="modalContent">
+        <!-- Populated dynamically by js/script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo footer-logo">
+          <span class="logo-icon">♻</span>
+          <span class="logo-text">Re<span>Sell</span></span>
+        </a>
+        <p class="footer-tagline">Give Your Old Things a New Life.</p>
+        <p class="footer-desc">
+          A simple, trusted second-hand marketplace built as a B.Tech CSE 1st Semester web development project.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="buy.html">Buy Products</a></li>
+          <li><a href="sell.html">Sell Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Details</h4>
+        <ul class="contact-list">
+          <li>Email: support@resell-campus.in</li>
+          <li>Phone: +91 98765 43210</li>
+          <li>Location: CSE Department, Engineering College Campus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 ReSell &ndash; Second-Hand Buying &amp; Selling Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>
